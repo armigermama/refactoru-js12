@@ -1,0 +1,50 @@
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+body {
+ 	background-color: #FFF;
+ }
+
+header, #data-form, section {
+	margin: 10px;
+}
+
+header {
+ 	background-color: silver;
+ }
+
+#data-form {
+ 	background-color: #e67e22;
+ }
+
+section {
+ 	border: 1px solid gray;
+ 	background-color: #16a085;
+ }
+
+#quote-list {
+	list-style-type: none;
+	list-style-position: inside;
+	padding-left: 0;
+}
+
+img {
+	width: 15px;
+	height: 15px;
+}
+
+.float-right {
+	float: right;
+	padding-right: 10px;
+}
+
+.float-left {
+	float: left;
+	padding-left: 10px;
+}
+
+.clearfix {
+	overflow: hidden;
+}
