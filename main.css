@@ -24,7 +24,7 @@ body {
 
 .l-container {
 	margin: 10px 30px;
-	padding-top: 5px;
+	padding: 5px 0;
 	background-color: silver;
 /*	border-radius: 10px;
 */}
@@ -35,6 +35,10 @@ header, fieldset {
 	border: none;
 	padding: 10px;
 }		
+
+legend {
+	padding-left: 10px;
+}
 
 .inputs {
 	margin: 10px;
