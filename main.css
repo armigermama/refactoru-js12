@@ -3,25 +3,81 @@
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
  }
 
+@font-face {
+    font-family: 'ferbtasticregular';
+    src: url('fonts/phineas_and_ferb_font_for_nick_2-webfont.eot');
+    src: url('fonts/phineas_and_ferb_font_for_nick_2-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/phineas_and_ferb_font_for_nick_2-webfont.woff') format('woff'),
+         url('fonts/phineas_and_ferb_font_for_nick_2-webfont.ttf') format('truetype'),
+         url('fonts/phineas_and_ferb_font_for_nick_2-webfont.svg#ferbtasticregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
  	background-color: #FFF;
+ 	width: 850px;
+ 	margin: 0 auto;
  }
+
+.l-container {
+	margin: 10px 30px;
+	padding-top: 5px;
+	background-color: silver;
+/*	border-radius: 10px;
+*/}
+
+header, fieldset {
+	margin: -10px;
+	/*border-radius: 5px;*/
+	border: none;
+	padding: 10px;
+}		
+
+.inputs {
+	margin: 10px;
+}
+
+.inputs input {
+	font-size: 16px;
+}
 
 header, #data-form, section {
 	margin: 10px;
 }
 
-header {
+h1 {
+	font-family: ferbtasticregular;
+	font-size: 4em;
+	color: #EA2227;
+}
+
+button {
+	font-size: 1.5em;
+	font-family: ferbtasticregular;
+	background-color: #FEE300;
+	border-radius: 20px;
+	padding: 5px 20px 10px 20px;
+	margin: 0 10px;
+	color: #EA2227;
+	border: 2px solid #EC5724;
+}
+
+/*header {
  	background-color: silver;
  }
-
+*/
 #data-form {
  	background-color: #e67e22;
- }
+/* 	border-radius: 10px;
+*/ }
 
 section {
  	border: 1px solid gray;
  	background-color: #16a085;
+ 	/*border-radius: 10px;*/
  }
 
 #quote-list {
@@ -48,3 +104,4 @@ img {
 .clearfix {
 	overflow: hidden;
 }
+
