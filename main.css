@@ -22,16 +22,24 @@ body {
  	margin: 0 auto;
  }
 
+.l-container, #data-form, input, textarea {
+	border-radius: 10px;
+}
+
+input, textarea {
+	padding: 5px;
+	border: none;
+}
+
 .l-container {
 	margin: 10px 30px;
 	padding: 5px 0;
 	background-color: #A1D4E9;
-	border-radius: 10px;
 }
 
 header, fieldset {
 	margin: -10px;
-	border-radius: 5px;
+/*	border-radius: 5px;*/
 	border: none;
 	padding: 10px;
 }		
@@ -79,7 +87,6 @@ button {
 */
 #data-form {
  	background-color: #e67e22;
- 	border-radius: 10px;
  }
 
 section {
