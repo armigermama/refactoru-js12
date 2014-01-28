@@ -25,19 +25,21 @@ body {
 .l-container {
 	margin: 10px 30px;
 	padding: 5px 0;
-	background-color: silver;
-/*	border-radius: 10px;
-*/}
+	background-color: #A1D4E9;
+	border-radius: 10px;
+}
 
 header, fieldset {
 	margin: -10px;
-	/*border-radius: 5px;*/
+	border-radius: 5px;
 	border: none;
 	padding: 10px;
 }		
 
 legend {
-	padding-left: 10px;
+	padding: 10px 0 0 10px;
+	color: #FFF;
+	font-size: 1.2em;
 }
 
 .inputs {
@@ -56,10 +58,12 @@ h1 {
 	font-family: ferbtasticregular;
 	font-size: 4em;
 	color: #EA2227;
+	text-align: center;
 }
 
 button {
 	font-size: 1.5em;
+	font-weight: lighter;
 	font-family: ferbtasticregular;
 	background-color: #FEE300;
 	border-radius: 20px;
@@ -75,13 +79,13 @@ button {
 */
 #data-form {
  	background-color: #e67e22;
-/* 	border-radius: 10px;
-*/ }
+ 	border-radius: 10px;
+ }
 
 section {
  	border: 1px solid gray;
  	background-color: #16a085;
- 	/*border-radius: 10px;*/
+ 	border-radius: 10px;
  }
 
 #quote-list {
@@ -90,19 +94,34 @@ section {
 	padding-left: 0;
 }
 
+blockquote > p {
+	font-style: italic;
+	font-weight: bolder;
+	font-size: 1.5em;
+}
+
+.author-filter {
+	font-size: 1.5em;
+}
+
+.author-filter:hover {
+	color: #FFAE42;
+	text-decoration: underline;
+}
+
 img {
-	width: 15px;
-	height: 15px;
+	width: 30px;
+	height: 30px;
 }
 
 .float-right {
 	float: right;
-	padding-right: 10px;
+	padding: 0 50px 10px 0;
 }
 
 .float-left {
 	float: left;
-	padding-left: 10px;
+	padding-left: 50px;
 }
 
 .clearfix {
