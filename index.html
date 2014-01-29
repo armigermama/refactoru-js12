@@ -13,7 +13,7 @@
 	<header>
 		<h1>super quotimographierator</h1>
 		<nav>
-			<button>refresherator</button><button>randomator</button><button>deletinator</button>
+			<button>refresherator</button><button id="random-button">randominator</button><button id="undo-button" class="hidden">undoifier</button>
 		</nav>
 	</header>
 
@@ -22,12 +22,11 @@
 			<fieldset>
 				<legend>enter your quote here</legend>
 				<div class="inputs">
-					<textarea cols="70" rows="5" class="quote" placeholder="quote" required></textarea>
+					<textarea cols="70" rows="5" class="quote" placeholder="quote" required="required"></textarea>
 				</div>
 				<div class="inputs">
-					<input type="text" size="70" class="author" placeholder="author" required>
+					<input type="text" size="70" class="author" placeholder="author" required="required">
 				</div>
-
 				<button id="submit-quote-button">quotimographier sendinator</button>
 			</fieldset>
 		</form>
@@ -41,6 +40,7 @@
 						<p>"Curse you Perry the platypus!"</p>
 					</blockquote>
 						<div class="clearfix">
+						<div class="float-right delete-button"><button>deletinator</button></div>
 							<div class="float-right author-filter">Dr. Doofenshmirtz</div>
 							<div class="float-left">
 								<img src="images/star-white.png">
@@ -54,6 +54,13 @@
 			</li> -->
 		</ul>
 	</article>
+	<div class="hidden pop-up">
+		<blockquote>
+			<p></p>
+		</blockquote>
+		<div class="float-right"></div>
+		<button id="close-button">closenator</button>
+	</div>
 	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	 <script src="utility.js"></script>
 	 <script src="main.js"></script>

@@ -2,6 +2,7 @@ $(function(){
 
 // an array of quote objects.
 	var quoteArray = [];
+	var deletedArray = [];
 
 // function to render entire quote list 
 // sorted according to rating first, timestamp second.
@@ -27,10 +28,12 @@ $(function(){
 		});
 
 	
-		console.log(quoteArray);
+		//console.log(quoteArray);
 
 		for (var j=0; j<quoteArray.length; j++) {
-			$('#quote-list').append(buildLi(quoteArray[j]));
+			if (!quoteArray[j].deleted){
+				$('#quote-list').append(buildLi(quoteArray[j]));
+			}
 		}
 	};
 
@@ -41,6 +44,7 @@ $(function(){
 					<p>\"{quote}\"</p>\
 					</blockquote>\
 					<div class=\"clearfix\">\
+					<div class=\"float-right delete-button\"><button>deletinator</button></div>\
 					<div class=\"float-right author-filter\">- {author} -</div>\
 					<div class=\"float-left\">'.supplant(quoteObj);
 			for (var i=0; i<quoteObj.rating; i++) {
@@ -64,6 +68,14 @@ $(function(){
 
 	$('#submit-quote-button').on('click', function(e){
 		e.preventDefault();
+		if ($('.quote').val() === '') {
+			$('.quote').attr('placeholder', 'curse you perry the platypus!');
+			return;
+		}
+		if ($('.author').val() === '') {
+			$('.author').attr('placeholder', 'Dr. Doofenshmirtz');
+			return;
+		}
 		var quote = {};
 		quote.quote = $('.quote').val();
 		quote.author = $('.author').val();
@@ -98,6 +110,51 @@ $(function(){
 		}).closest('li').toggle();
 
 
+	});
+
+	$(document).on('click','.delete-button',function(){
+		// console.log("indeletedbuttonhandler");
+		// console.log(deletedArray);
+		var timeStamp = parseInt($(this).closest('li').attr('data-timestamp'));
+		for (var k=0; k<quoteArray.length; k++) {
+			if (quoteArray[k].timeStamp === timeStamp){
+				quoteArray[k].deleted = true;
+				deletedArray.push(quoteArray[k].timeStamp);
+				
+				renderList();
+				$('#undo-button').show();
+			}
+		}
+		// console.log(deletedArray);
+	});
+
+	$(document).on('click','#undo-button',function(){
+		// console.log("inundobuttonhandler");
+		// console.log(deletedArray);
+		for (var g=0; g<quoteArray.length; g++) {
+			if (quoteArray[g].timeStamp === deletedArray[deletedArray.length-1]){
+				quoteArray[g].deleted = false;
+				//console.log(deletedArray);
+				renderList();
+				
+				if (deletedArray.length === 0){
+					$('#undo-button').hide();
+				}
+			}
+		}
+		deletedArray.pop();
+		// console.log(deletedArray);
+	});
+
+	$(document).on('click','#random-button',function(){
+		var randomQuote = quoteArray[Math.floor(Math.random()*quoteArray.length)];
+		$('.pop-up').find('p').text('"' + randomQuote.quote + '"');
+		$('.pop-up').find('div').text('-' + randomQuote.author + '-');
+		$('.pop-up').toggle();
+	});
+
+	$(document).on('click','#close-button',function(){
+		$('.pop-up').toggle();
 	});
 
 });

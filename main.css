@@ -22,7 +22,7 @@ body {
  	margin: 0 auto;
  }
 
-.l-container, #data-form, input, textarea {
+.l-container, #data-form, input, textarea, .pop-up {
 	border-radius: 10px;
 }
 
@@ -38,7 +38,7 @@ input, textarea {
 }
 
 header, fieldset {
-	margin: -10px;
+	/*margin: -10px;*/
 /*	border-radius: 5px;*/
 	border: none;
 	padding: 10px;
@@ -47,7 +47,7 @@ header, fieldset {
 legend {
 	padding: 10px 0 0 10px;
 	color: #FFF;
-	font-size: 1.2em;
+	font-size: 1.5em;
 }
 
 .inputs {
@@ -69,7 +69,7 @@ h1 {
 	text-align: center;
 }
 
-button {
+button, #submit-quote-button {
 	font-size: 1.5em;
 	font-weight: lighter;
 	font-family: ferbtasticregular;
@@ -81,10 +81,7 @@ button {
 	border: 2px solid #EC5724;
 }
 
-/*header {
- 	background-color: silver;
- }
-*/
+
 #data-form {
  	background-color: #e67e22;
  }
@@ -104,16 +101,17 @@ section {
 blockquote > p {
 	font-style: italic;
 	font-weight: bolder;
-	font-size: 1.5em;
+	font-size: 1.2em;
 }
 
 .author-filter {
-	font-size: 1.5em;
+	font-size: 1.2em;
 }
 
 .author-filter:hover {
 	color: #FFAE42;
 	text-decoration: underline;
+	cursor: pointer;
 }
 
 img {
@@ -123,8 +121,9 @@ img {
 
 .float-right {
 	float: right;
-	padding: 0 50px 10px 0;
+	padding: 0 10px 10px 0;
 }
+
 
 .float-left {
 	float: left;
@@ -133,5 +132,20 @@ img {
 
 .clearfix {
 	overflow: hidden;
+}
+
+.hidden {
+	display: none;
+}
+
+.pop-up {
+	position:absolute;
+	width: 90%;
+	height: 90%;
+	background-color: #4F328E;
+	top: 5%;
+	left: 5%;
+	padding: 20px;
+	color: #FFF9B4;
 }
 
